@@ -1,5 +1,11 @@
 #!/bin/zsh
 
+# Show greeting only once per shell session
+if [[ -n "$MATT_GREETING_SHOWN" ]]; then
+  return
+fi
+export MATT_GREETING_SHOWN=1
+
 # Colors
 BLUE='\033[1;34m'
 YELLOW='\033[1;33m'
