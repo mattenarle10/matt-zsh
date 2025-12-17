@@ -8,7 +8,7 @@ alias nextp='cd ~/NextProjects && ls -lah'
 alias cs='open -a "Cursor"'
 alias ws='open -a "Windsurf"'
 # --- Config Shortcuts ---
-alias conf='nvim ~/.zshrc'             # main zsh config
+alias conf='nvim $ZDOTDIR/.zshrc'             # main zsh config
 alias gconf='nvim ~/.matt_greeting.sh' # greeting banner
 alias aconf='nvim ~/.zsh_aliases'      # aliases
 alias sshconf='nvim ~/.ssh/config'
@@ -17,7 +17,7 @@ alias awsconf='nvim ~/.aws/config'
 alias awscred='nvim ~/.aws/credentials'
 
 # --- Reload & Helpers ---
-alias rld='source ~/.zshrc && echo "Reloaded zsh . . . "'
+alias rld='source $ZDOTDIR/.zshrc && echo "Reloaded zsh . . . "'
 alias h='help'
 alias mhelp='cat ~/.matt_greeting.sh'  # show quick commands anytime
 

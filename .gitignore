@@ -7,3 +7,7 @@
 # Backup files
 *.backup
 *~
+
+# Zsh runtime files
+.config/zsh/.zcompdump*
+.config/zsh/.zsh_history
