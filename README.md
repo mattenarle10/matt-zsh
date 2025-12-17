@@ -121,6 +121,3 @@ stow -D .  # Remove all symlinks
 └── README.md
 ```
 
-## Credits
-
-Built with love by Matt

@@ -20,7 +20,16 @@ return {
     config = function()
       require("lualine").setup({
         options = {
-          theme = "tokyonight",
+          theme = "auto",
+          transparent = true,
+        },
+        sections = {
+          lualine_c = {
+            {
+              "filename",
+              path = 1,  -- Show relative path
+            },
+          },
         },
       })
     end,
