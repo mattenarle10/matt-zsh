@@ -25,7 +25,7 @@ brew install stow neovim lazygit
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/YOUR_USERNAME/dotfiles.git ~/.dotfiles
+git clone https://github.com/mattenarle10/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 ```
 
