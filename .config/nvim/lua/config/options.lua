@@ -20,3 +20,10 @@ vim.o.swapfile = false       -- No swap files
 vim.o.backup = false         -- No backup files
 vim.o.splitright = true      -- Vertical splits to the right
 vim.o.splitbelow = true      -- Horizontal splits below
+
+-- Auto-reload files when changed externally (for Claude Code integration!)
+vim.o.autoread = true        -- Auto-reload files changed outside nvim
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+  pattern = "*",
+  command = "checktime",
+})
