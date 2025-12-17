@@ -24,12 +24,17 @@ return {
           transparent = true,
         },
         sections = {
+          lualine_a = {},  -- Clear left sections
+          lualine_b = {},
           lualine_c = {
             {
               "filename",
-              path = 1,  -- Show relative path
+              path = 1,  -- Show relative path - now truly centered!
             },
           },
+          lualine_x = {},  -- Clear right sections
+          lualine_y = {},
+          lualine_z = {},
         },
       })
     end,

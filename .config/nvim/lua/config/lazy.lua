@@ -8,7 +8,7 @@ require("lazy").setup({
     version = false,
   },
   install = { colorscheme = { "tokyonight" } },
-  checker = { enabled = true },
+  checker = { enabled = false },  -- Disable update notifications on startup
   performance = {
     rtp = {
       disabled_plugins = {

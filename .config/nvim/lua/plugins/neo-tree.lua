@@ -24,5 +24,16 @@ return {
     -- Keymaps
     vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle file explorer" })
     vim.keymap.set("n", "<leader>o", "<cmd>Neotree focus<cr>", { desc = "Focus file explorer" })
+
+    -- Auto-open neo-tree when opening a directory (replaces netrw)
+    vim.api.nvim_create_autocmd("VimEnter", {
+      callback = function(data)
+        local directory = vim.fn.isdirectory(data.file) == 1
+        if directory then
+          vim.cmd.cd(data.file)
+          require("neo-tree.command").execute({ toggle = true, dir = data.file })
+        end
+      end,
+    })
   end,
 }

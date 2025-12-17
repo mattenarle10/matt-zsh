@@ -48,3 +48,9 @@ map("n", "<Esc>", "<cmd>nohlsearch<cr>", { desc = "Clear search highlight" })
 
 -- Better paste (doesn't replace clipboard)
 map("x", "p", [["_dP]], { desc = "Paste without yanking" })
+
+-- Fast scrolling
+map("n", "<C-d>", "<C-d>zz", { desc = "Scroll down half page (centered)" })
+map("n", "<C-u>", "<C-u>zz", { desc = "Scroll up half page (centered)" })
+map("n", "n", "nzzzv", { desc = "Next search result (centered)" })
+map("n", "N", "Nzzzv", { desc = "Previous search result (centered)" })

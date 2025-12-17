@@ -27,3 +27,7 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
   pattern = "*",
   command = "checktime",
 })
+
+-- Disable netrw (we use neo-tree instead)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
