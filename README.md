@@ -4,9 +4,11 @@ Personal configuration files for zsh, nvim, and other tools.
 
 ## What's Included
 
-- **zsh**: Shell configuration with Oh My Zsh, Powerlevel10k, zoxide (.zshrc, .zsh_*, p10k.zsh)
-- **nvim**: Neovim configuration with LSP, Telescope, Neo-tree, and Lazygit integration (.config/nvim/)
-- **lazygit**: Git TUI configuration (.config/lazygit/)
+- **zsh**: Shell configuration with Oh My Zsh, Powerlevel10k, zoxide (`.config/zsh/`)
+- **nvim**: Neovim configuration with LSP, Telescope, Neo-tree, and Lazygit integration (`.config/nvim/`)
+- **lazygit**: Git TUI configuration (`.config/lazygit/`)
+
+**📖 New to Nvim config?** Check out [NVIM_GUIDE.md](NVIM_GUIDE.md) for a step-by-step learning path!
 
 ## Quick Start
 
@@ -105,15 +107,17 @@ stow -D .  # Remove all symlinks
 │   │   └── lua/
 │   │       ├── config/
 │   │       └── plugins/
-│   └── lazygit/       # Lazygit configuration
-│       └── config.yml
-├── .zshrc             # Zsh main config
-├── .zsh_aliases       # Zsh aliases
-├── .zsh_functions     # Zsh functions
-├── .zsh_paths         # PATH configuration
-├── .matt_greeting.sh  # Custom greeting
-├── p10k.zsh           # Powerlevel10k theme
+│   ├── lazygit/       # Lazygit configuration
+│   │   └── config.yml
+│   └── zsh/           # Zsh configuration
+│       ├── .zshrc
+│       ├── .zsh_aliases
+│       ├── .zsh_functions
+│       ├── .zsh_paths
+│       ├── .matt_greeting.sh
+│       └── p10k.zsh
 ├── .gitignore
+├── NVIM_GUIDE.md      # Learn your nvim config!
 └── README.md
 ```
 

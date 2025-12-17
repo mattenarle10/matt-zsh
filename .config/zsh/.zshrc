@@ -15,7 +15,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Load PATHs
-[ -f ~/.zsh_paths ] && source ~/.zsh_paths
+[ -f ~/.config/zsh/.zsh_paths ] && source ~/.config/zsh/.zsh_paths
 
 # zoxide (smarter directory jumping)
 if command -v zoxide >/dev/null 2>&1; then
@@ -23,13 +23,13 @@ if command -v zoxide >/dev/null 2>&1; then
 fi
 
 # Load aliases (override Oh My Zsh plugin aliases like gl)
-[ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
+[ -f ~/.config/zsh/.zsh_aliases ] && source ~/.config/zsh/.zsh_aliases
 
 # Load functions
-[ -f ~/.zsh_functions ] && source ~/.zsh_functions
+[ -f ~/.config/zsh/.zsh_functions ] && source ~/.config/zsh/.zsh_functions
 
 # Banner / greeting
-[ -f ~/.matt_greeting.sh ] && source ~/.matt_greeting.sh
+[ -f ~/.config/zsh/.matt_greeting.sh ] && source ~/.config/zsh/.matt_greeting.sh
 
 # Matt's terminal options
 setopt autocd               # Just type folder name to cd
@@ -51,5 +51,5 @@ PROMPT='%F{cyan}Matt%f %F{blue}%~%f %# '
 [ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/p10k.zsh.
+[[ ! -f ~/.config/zsh/p10k.zsh ]] || source ~/.config/zsh/p10k.zsh
