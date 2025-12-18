@@ -24,17 +24,32 @@ return {
           transparent = true,
         },
         sections = {
-          lualine_a = {},  -- Clear left sections
-          lualine_b = {},
+          lualine_a = {},
+          lualine_b = {
+            {
+              "branch",
+              icon = "",
+            },
+            {
+              "diff",
+              symbols = { added = " ", modified = " ", removed = " " },
+            },
+          },
           lualine_c = {
             {
               "filename",
-              path = 1,  -- Show relative path - now truly centered!
+              path = 1,  -- Show relative path
             },
           },
-          lualine_x = {},  -- Clear right sections
-          lualine_y = {},
-          lualine_z = {},
+          lualine_x = {
+            {
+              "diagnostics",
+              sources = { "nvim_lsp" },
+              symbols = { error = " ", warn = " ", info = " ", hint = " " },
+            },
+          },
+          lualine_y = { "filetype" },
+          lualine_z = { "location", "progress" },
         },
       })
     end,

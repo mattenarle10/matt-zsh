@@ -18,6 +18,15 @@ return {
           enabled = true,
         },
         use_libuv_file_watcher = true,
+        filtered_items = {
+          visible = true,  -- Show hidden files by default
+          hide_dotfiles = false,
+          hide_gitignored = false,
+          hide_by_name = {
+            ".git",
+            ".DS_Store",
+          },
+        },
       },
     })
 
