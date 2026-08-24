@@ -53,7 +53,6 @@
     dir                       # current directory
     vcs                       # git status
     compact_status            # previous command exit code
-    compact_command_time      # previous command duration
     repo_runtime              # current repo runtime (node/rust/python/go/java)
     virtualenv                # python virtual environment
     compact_time              # current time, hidden in tiny panes

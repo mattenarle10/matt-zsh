@@ -107,6 +107,16 @@ if ! command -v lazygitrs &>/dev/null; then
   echo "→ Installing lazygitrs..."
   bun install -g lazygitrs
 fi
+
+# Bun may block lazygitrs's postinstall, which leaves only the JS shim on PATH.
+if ! lazygitrs --version &>/dev/null; then
+  echo "→ Completing lazygitrs binary install..."
+  (
+    cd "$HOME/.bun/install/global"
+    bun pm trust lazygitrs
+  )
+fi
+
 # Wrapper so anything calling `lazygit` (terminal, lazygit.nvim) hits lazygitrs
 if [ ! -f "$HOME/.local/bin/lazygit" ]; then
   echo "→ Creating lazygit → lazygitrs wrapper..."

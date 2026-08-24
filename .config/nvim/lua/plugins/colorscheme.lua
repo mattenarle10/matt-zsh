@@ -32,8 +32,8 @@ return {
         },
         custom_highlights = function(colors)
           return {
-            CursorLine = { bg = panel },
-            CursorLineNr = { fg = royal_soft, style = { "bold" } },
+            CursorLine = { bg = "NONE" },
+            CursorLineNr = { fg = royal_soft },
             LineNr = { fg = colors.overlay0 },
             WinSeparator = { fg = royal },
             FloatBorder = { fg = royal, bg = "NONE" },
@@ -42,6 +42,8 @@ return {
             PmenuSel = { bg = royal, fg = colors.text, style = { "bold" } },
             TelescopeBorder = { fg = royal, bg = "NONE" },
             TelescopeSelection = { bg = panel_light, fg = colors.text, style = { "bold" } },
+            NeoTreeCursorLine = { bg = panel_light, fg = colors.text },
+            NeoTreeFileNameOpened = { bg = panel_light, fg = royal_soft, style = { "bold" } },
             NeoTreeDirectoryName = { fg = royal_soft },
             NeoTreeDirectoryIcon = { fg = royal_soft },
           }

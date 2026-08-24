@@ -1,5 +1,5 @@
 model = "gpt-5.5"
-model_reasoning_effort = "medium"
+model_reasoning_effort = "high"
 plan_mode_reasoning_effort = "high"
 model_verbosity = "low"
 personality = "pragmatic"
@@ -10,11 +10,13 @@ web_search = "cached"
 tool_output_token_limit = 8000
 project_doc_max_bytes = 24576
 
+service_tier = "priority"
 [features]
 multi_agent = true
 shell_snapshot = true
 undo = true
 memories = false
+js_repl = false
 
 [sandbox_workspace_write]
 network_access = false
@@ -90,6 +92,14 @@ trust_level = "trusted"
 [projects."/Users/mattenarle/dev/ecv/palawan/liftnshift-nuke"]
 trust_level = "trusted"
 
+[projects."/Users/mattenarle/dev/ark/ark-institute"]
+trust_level = "trusted"
+
+[tui]
+notifications = ["agent-turn-complete"]
+notification_method = "bel"
+notification_condition = "always"
+
 [tui.model_availability_nux]
 "gpt-5.5" = 4
 
@@ -98,6 +108,7 @@ url = "https://developers.openai.com/mcp"
 
 [notice.model_migrations]
 "gpt-5.3-codex" = "gpt-5.4"
+"gpt-5.4" = "gpt-5.5"
 
 [apps._default]
 destructive_enabled = false
@@ -118,3 +129,98 @@ approval_mode = "prompt"
 
 [plugins."github@openai-curated"]
 enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."atlassian@claude-plugins-official"]
+enabled = true
+
+[plugins."clangd-lsp@claude-plugins-official"]
+enabled = true
+
+[plugins."commit-commands@claude-plugins-official"]
+enabled = true
+
+[plugins."context7@claude-plugins-official"]
+enabled = true
+
+[plugins."expo@claude-plugins-official"]
+enabled = true
+
+[plugins."feature-dev@claude-plugins-official"]
+enabled = true
+
+[plugins."frontend-design@claude-plugins-official"]
+enabled = true
+
+[plugins."github@claude-plugins-official"]
+enabled = true
+
+[plugins."playwright@claude-plugins-official"]
+enabled = true
+
+[plugins."pyright-lsp@claude-plugins-official"]
+enabled = true
+
+[plugins."rust-analyzer-lsp@claude-plugins-official"]
+enabled = true
+
+[plugins."superpowers@claude-plugins-official"]
+enabled = true
+
+[plugins."typescript-lsp@claude-plugins-official"]
+enabled = true
+
+[plugins."vercel@claude-plugins-official"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true
+
+[plugins."ecc@ecc"]
+enabled = true
+
+[marketplaces.openai-bundled]
+last_updated = "2026-07-02T08:50:08Z"
+source_type = "local"
+source = "/Users/mattenarle/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.claude-plugins-official]
+last_updated = "2026-07-02T08:50:39Z"
+source_type = "git"
+source = "https://github.com/anthropics/claude-plugins-official.git"
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-07-02T08:50:56Z"
+source_type = "local"
+source = "/Users/mattenarle/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[marketplaces.ecc]
+last_updated = "2026-07-02T08:51:36Z"
+source_type = "git"
+source = "https://github.com/affaan-m/everything-claude-code.git"
+
+[desktop]
+conversationDetailMode = "STEPS_COMMANDS"
+ambient-suggestions-enabled = true
+
+[hooks.state]
+
+[hooks.state."/Users/mattenarle/.codex/hooks.json:pre_tool_use:0:0"]
+trusted_hash = "sha256:0ae529a1a4360ad039320c9f543527968effab5c4e1211f8326e5d0d11a584d7"
+
+[hooks.state."superpowers@claude-plugins-official:hooks/hooks.json:session_start:0:0"]
+trusted_hash = "sha256:62acbaff2b2f55f41971e21a164990aaa53c96919baa0a5eae2eb5db73b9e6e6"

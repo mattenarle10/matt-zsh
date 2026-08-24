@@ -10,7 +10,9 @@ vim.o.shiftwidth = 2         -- 2 spaces for indentation
 vim.o.tabstop = 2            -- 2 spaces for tab
 vim.o.smartindent = true     -- Smart indentation
 vim.o.wrap = false           -- Don't wrap lines
-vim.o.cursorline = true      -- Highlight current line
+vim.o.cursorline = true      -- Highlight current line number
+vim.o.cursorlineopt = "number" -- Avoid full-width active-line flashing
+vim.o.guicursor = "a:block-blinkon0" -- Block, non-blinking cursor in every mode
 vim.o.termguicolors = true   -- True color support
 vim.o.signcolumn = "yes"     -- Always show sign column
 vim.o.updatetime = 250       -- Faster completion
@@ -27,6 +29,30 @@ vim.o.autoread = true        -- Auto-reload files changed outside nvim
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
   pattern = "*",
   command = "checktime",
+})
+
+-- Keep utility windows visually quiet while preserving a subtle cue in files.
+local quiet_ui_group = vim.api.nvim_create_augroup("QuietUi", { clear = true })
+vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter", "FileType" }, {
+  group = quiet_ui_group,
+  pattern = "*",
+  callback = function()
+    local quiet_filetypes = {
+      lazy = true,
+      TelescopePrompt = true,
+      Trouble = true,
+    }
+
+    if vim.bo.filetype == "neo-tree" then
+      vim.wo.cursorline = true
+      vim.wo.cursorlineopt = "line"
+    elseif quiet_filetypes[vim.bo.filetype] or vim.bo.buftype ~= "" then
+      vim.wo.cursorline = false
+    else
+      vim.wo.cursorline = true
+      vim.wo.cursorlineopt = "number"
+    end
+  end,
 })
 
 -- Disable netrw (we use neo-tree instead)

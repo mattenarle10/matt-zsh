@@ -5,9 +5,18 @@ gui:
       - green
       - bold
     inactiveBorderColor:
-      - white
+      - '#6b7280'
+    searchingActiveBorderColor:
+      - cyan
+      - bold
+    optionsTextColor:
+      - '#93c5fd'
     selectedLineBgColor:
-      - blue
+      - reverse
+    inactiveViewSelectedLineBgColor:
+      - default
+    defaultFgColor:
+      - '#d9dce3'
   # Show command log
   showCommandLog: false
   # Show file tree

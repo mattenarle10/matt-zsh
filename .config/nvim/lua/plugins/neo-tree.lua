@@ -8,10 +8,22 @@ return {
     "MunifTanjim/nui.nvim",
   },
   config = function()
+    local function enable_cursorline()
+      vim.wo.cursorline = true
+      vim.wo.cursorlineopt = "line"
+    end
+
     require("neo-tree").setup({
       close_if_last_window = true,
+      log_level = vim.log.levels.ERROR,
+      enable_opened_markers = true,
       window = {
         width = 30,
+      },
+      default_component_configs = {
+        name = {
+          highlight_opened_files = true,
+        },
       },
       filesystem = {
         follow_current_file = {
@@ -26,6 +38,21 @@ return {
             ".git",
             ".DS_Store",
           },
+        },
+      },
+      event_handlers = {
+        {
+          event = "neo_tree_buffer_enter",
+          handler = enable_cursorline,
+        },
+        {
+          event = "neo_tree_window_after_open",
+          handler = function(args)
+            if args.winid and vim.api.nvim_win_is_valid(args.winid) then
+              vim.wo[args.winid].cursorline = true
+              vim.wo[args.winid].cursorlineopt = "line"
+            end
+          end,
         },
       },
     })
